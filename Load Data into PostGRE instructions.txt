@@ -8,7 +8,7 @@
 
 5. Repeat for all tables EXCEPT for JobPosting. You must import the data for this table last.
 
-6. Once at JobPosting, be sure to import the dataset “job_merged_transformed_df”. This is the only correct one.
+6. Once at JobPosting, import the dataset “job_merged_transformed_df”. 
 
 7. Once data is imported, run a test such as SELECT * FROM “Country” to ensure the data is successfully loaded
 
