@@ -17,7 +17,7 @@ def process_url():
         scamResult = makePrediction(targetURL)
         return render_template('process_url.html', targetURL=targetURL, scamResult=scamResult)
     else:
-        return render_template('index.html')
+        return render_template('process_url.html', targetURL=targetURL, scamResult="Invalid url: Must be a https://www.indeed.com/ link")
 
 
 if __name__ == '__main__':
