@@ -1,0 +1,13 @@
+body {
+    background-color: rgb(39, 39, 39);
+}
+
+.titleBar {
+    padding: 15px;
+    border-radius: 10px;
+    background-color: rgb(20, 20, 20);
+}
+
+.mainBody{
+    margin-top: 30px;
+}
