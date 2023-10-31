@@ -146,11 +146,11 @@ def makePredictionTF(url):
     selectedData = [selectedData]
 
     # use tf to tokenize the webpage data for ML
-    tokenizer = tf.keras.models.load_model('pretrainedModels/tokenizer_finial.tf')
+    tokenizer = tf.keras.models.load_model('pretrainedModels/tf_model/tokenizer_finial.tf')
     tokened_data = tokenizer.predict(selectedData)
 
     # load the pre-trained model
-    model = tf.keras.models.load_model('pretrainedModels/Tensorflow_model_finial.keras')
+    model = tf.keras.models.load_model('pretrainedModels/tf_model/Tensorflow_model_finial.keras')
 
     # Make a prediction on whether the scraped data is from a fraudulent job post or not
     prediction = model.predict(tokened_data)
