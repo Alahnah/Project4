@@ -192,4 +192,3 @@ def makePredictionSK(url):
         "predict" : prediction,
         "title" : allData["title"]
     }
-
