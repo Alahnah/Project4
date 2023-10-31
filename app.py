@@ -24,10 +24,10 @@ def process_url():
         # check the result of the prediction
         if scamResult["predict"] == 0:
             # not a scam
-            verdeict = "\"" + scamResult["title"] + "\" is not a scam"
+            verdeict = "\"" + scamResult["title"] + "\" is not likely to be a scam"
         else:
             # a scam
-            verdeict = "\"" + scamResult["title"] + "\" is a scam"
+            verdeict = "\"" + scamResult["title"] + "\" has a risk of being a scam"
 
         # return the verdict and posting title
         return render_template('process_url.html', targetURL=targetURL, scamResult=verdeict)
