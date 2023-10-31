@@ -5,6 +5,9 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 # libaries for machine learning
 import numpy as np
+
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = ""
 import tensorflow as tf
 from tensorflow.keras.layers import TextVectorization
 
@@ -130,7 +133,7 @@ def getData(html_content):
         "function" : function
     }
 
-def makePrediction(url):
+def makePredictionTF(url):
     # collect the raw html
     html_content = getHTML(url)
     # extract usable info from the html
@@ -150,13 +153,43 @@ def makePrediction(url):
     tokened_data = tokenizer.predict(selectedData)
 
     # load the pre-trained model
-    model = tf.keras.models.load_model('pretrainedModels/LanguageML.keras')
+    # model = tf.keras.models.load_model('pretrainedModels/LanguageML.keras')
     
-    prediction = model.predict(tokened_data)
-    return prediction
+    # prediction = model.predict(tokened_data)
+    prediction = 0
 
+    return {
+        "predict" : prediction,
+        "title" : allData["title"]
+    }
+
+def makePredictionSK(url):
+    # collect the raw html
+    html_content = getHTML(url)
+    # extract usable info from the html
+    allData = getData(html_content)
+
+    # combine description and benedits into a single string
+    selectedData = (allData["description"] + " " + allData["benefits"]).strip().replace('\xa0', '')
+    # convert the data into a list
+    selectedData = [selectedData]
+    # create the tokenizer class
+    vectorize_layer = TextVectorization(max_tokens=10000, standardize='lower_and_strip_punctuation', output_sequence_length=268)
+    # toknize the data
+    vectorize_layer.adapt(selectedData)
+
+    # use tf to extrack the tokenized data\
+    tokenizer = tf.keras.models.load_model('pretrainedModels/tokenizer.tf')
+    tokened_data = tokenizer.predict(selectedData)
+
+    # load the pre-trained model
+    # model = tf.keras.models.load_model('pretrainedModels/LanguageML.keras')
     
-    # print(tokened_data.shape)
-    # print(tokened_data[0].shape)
-    # return tokened_data[0]
+    # prediction = model.predict(tokened_data)
+    prediction = 1
+
+    return {
+        "predict" : prediction,
+        "title" : allData["title"]
+    }
 

@@ -13,16 +13,21 @@
             <form class="row g-3 align-items-center" action="/process_url" method="POST">
                 <div class="col-md-12">
                     <label for="targetIp" class="form-label">Questionable URL</label>
-                    <input type="url" class="form-control" id="targetURL" name="targetURL" placeholder="www.Indeed.com/scam?" value="{{targetURL}}">
+                    <input type="url" class="form-control" id="targetURL" name="targetURL" placeholder="www.Indeed.com/scam?">
                 </div>
+
+                <select name="modelType" class="col-2 custom-select" style="margin-left: 7px; margin-top: 20px; border-radius: 5px;" size="2">
+                    <option value="0" selected>Tensor Flow</option>
+                    <option value="1">Sklearn</option>
+                </select>
                 
-                <div class="col-4">
+                <div class="col-4" style="margin-left: 20px;">
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
             </form>
         </div>
 
-        <div>
+        <div style="margin-top: 20px;">
             <h1 class="text-light">{{scamResult}}</h1>
         </div>
     </body>
