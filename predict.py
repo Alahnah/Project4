@@ -140,54 +140,25 @@ def makePredictionTF(url):
     allData = getData(html_content)
 
     # combine description and benedits into a single string
-    selectedData = (allData["description"] + " " + allData["benefits"]).strip().replace('\xa0', '')
+    selectedData = (allData["description"] + " " + allData["title"]+ " " + allData["location"]+ " " + allData["employment_type"]).strip().replace('\xa0', '')
     # convert the data into a list
-    selectedData = [selectedData]
-    # create the tokenizer class
-    vectorize_layer = TextVectorization(max_tokens=10000, standardize='lower_and_strip_punctuation', output_sequence_length=268)
-    # toknize the data
-    vectorize_layer.adapt(selectedData)
 
-    # use tf to extrack the tokenized data\
-    tokenizer = tf.keras.models.load_model('pretrainedModels/tokenizer.tf')
+    selectedData = [selectedData]
+
+    # use tf to tokenize the webpage data for ML
+    tokenizer = tf.keras.models.load_model('pretrainedModels/tokenizer_finial.tf')
     tokened_data = tokenizer.predict(selectedData)
 
     # load the pre-trained model
-    # model = tf.keras.models.load_model('pretrainedModels/LanguageML.keras')
+    model = tf.keras.models.load_model('pretrainedModels/Tensorflow_model_finial.keras')
+
+    # Make a prediction on whether the scraped data is from a fraudulent job post or not
+    prediction = model.predict(tokened_data)
     
-    # prediction = model.predict(tokened_data)
-    prediction = 0
+    #Fraud = 1 and legitimate = 0
+    prediction =np.where(prediction > .5, 1,0)
 
-    return {
-        "predict" : prediction,
-        "title" : allData["title"]
-    }
-
-def makePredictionSK(url):
-    # collect the raw html
-    html_content = getHTML(url)
-    # extract usable info from the html
-    allData = getData(html_content)
-
-    # combine description and benedits into a single string
-    selectedData = (allData["description"] + " " + allData["benefits"]).strip().replace('\xa0', '')
-    # convert the data into a list
-    selectedData = [selectedData]
-    # create the tokenizer class
-    vectorize_layer = TextVectorization(max_tokens=10000, standardize='lower_and_strip_punctuation', output_sequence_length=268)
-    # toknize the data
-    vectorize_layer.adapt(selectedData)
-
-    # use tf to extrack the tokenized data\
-    tokenizer = tf.keras.models.load_model('pretrainedModels/tokenizer.tf')
-    tokened_data = tokenizer.predict(selectedData)
-
-    # load the pre-trained model
-    # model = tf.keras.models.load_model('pretrainedModels/LanguageML.keras')
-    
-    # prediction = model.predict(tokened_data)
-    prediction = 1
-
+    # return a dict
     return {
         "predict" : prediction,
         "title" : allData["title"]

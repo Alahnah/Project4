@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, render_template, request
-from predict import makePredictionTF, makePredictionSK
+from predict import makePredictionTF
 
 # Creates Flask
 app = Flask(__name__)
@@ -18,13 +18,8 @@ def process_url():
 
     # check if the url is valid
     if targetURL[:23] == "https://www.indeed.com/":
-        # call the correct model for the choice made
-        if modelType == 0:
-            # tensor flow model
-            scamResult = makePredictionTF(targetURL)
-        else:
-            # sklearn model
-            scamResult = makePredictionSK(targetURL)
+        # make a prediction
+        scamResult = makePredictionTF(targetURL)
 
         # check the result of the prediction
         if scamResult["predict"] == 0:
@@ -44,4 +39,3 @@ def process_url():
 
 if __name__ == '__main__':
     app.run()
-    # app.run(host="0.0.0.0", port=5000, debug=True) # start the flask web app
