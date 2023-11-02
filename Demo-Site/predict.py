@@ -156,7 +156,7 @@ def makePredictionTF(url):
     prediction = model.predict(tokened_data)
     
     #Fraud = 1 and legitimate = 0
-    prediction =np.where(prediction > .5, 1,0)
+    prediction =np.where(prediction > .9, 1,0)
 
     # return a dict
     return {
