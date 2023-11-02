@@ -1,0 +1,15 @@
+req_edu_id,required_education
+1,
+2,Bachelor's Degree
+3,Master's Degree
+4,High School or equivalent
+5,Unspecified
+6,Some College Coursework Completed
+7,Vocational
+8,Certification
+9,Associate Degree
+10,Professional
+11,Doctorate
+12,Some High School Coursework
+13,Vocational - Degree
+14,Vocational - HS Diploma
