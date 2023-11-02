@@ -1,10 +1,2 @@
-![image](https://github.com/Alahnah/Project4/assets/132726623/392d914f-e99b-4710-85c5-66fde96d98dd)
-![image](https://github.com/Alahnah/Project4/assets/132726623/a93a47ef-fa25-4c8a-90ad-79101a300827)
-![image](https://github.com/Alahnah/Project4/assets/132726623/c5337cd0-e2bf-49fa-b69b-d9e6147b4387)
-![image](https://github.com/Alahnah/Project4/assets/132726623/1745794b-25c1-45be-8613-9b3ed2d39acb)
-![image](https://github.com/Alahnah/Project4/assets/132726623/b444416a-2b2e-4eab-bbbe-768f9859f77f)
-![image](https://github.com/Alahnah/Project4/assets/132726623/8dcc40f9-3958-4cdc-a4d6-6b523cc28c44)
-![image](https://github.com/Alahnah/Project4/assets/132726623/063772d4-b0f7-4105-bf27-4830d9c79937)
-![image](https://github.com/Alahnah/Project4/assets/132726623/599a93b8-e05b-4c21-9193-31efad2d7fff)
-![image](https://github.com/Alahnah/Project4/assets/132726623/a3955c17-b3a4-46db-96a8-83291d751996)
+
 
