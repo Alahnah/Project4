@@ -38,7 +38,10 @@
 # Part Three: Continued
 - Slight over sensitivity to fraud
 - classification accuracy above 80%
-- Corrected for in demo by adjusting fraud threshold 
+- Corrected for in demo by adjusting fraud threshold
+
+  ![image](https://github.com/Alahnah/Project4/assets/132726623/7fc2e25d-e7de-4cc3-a5af-23d018f72537)
+
 
 # Part Four: UI, Web Scraping, Making a Prediction
 ### Web UI:
