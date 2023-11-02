@@ -20,6 +20,7 @@
   - KNN: ROC AUC of 70%
     - n_neighbors = 3
   - RNF: ROC AUC of 76%
+    
     ![image](https://github.com/Alahnah/Project4/assets/132726623/0d331811-ddb8-411d-b590-a146d1000bcc)
     ![image](https://github.com/Alahnah/Project4/assets/132726623/d2de6551-123a-41a9-b98c-ee60ec73c22b)
 
