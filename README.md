@@ -51,7 +51,7 @@
 ### Making a Prediction:
 - Import tokenizer model
 - Tokenize the scraped data
- - combine data points into a single string before tokenizing
+  - combine data points into a single string before tokenizing
 - Import predictive model
 - Make a prediction
 - Convert the prediction % to a pass fail
