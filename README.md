@@ -17,9 +17,9 @@
 
 # Part Two: Classification Models w/ SkLearn
 - KNN vs. Random Forest 
- - KNN: ROC AUC of 70%
-  - n_neighbors = 3
- - RNF: ROC AUC of 76%
+  - KNN: ROC AUC of 70%
+    - n_neighbors = 3
+  - RNF: ROC AUC of 76%
 
 # Part Three: Tensorflow Challenges 
 - Data needed to be tokenized
@@ -27,7 +27,7 @@
 - Common issue when training against fraud
 - Fraudulent data gets drowned out
 - Model predicts all entries are legit giving high accuracy 
- - Accuracy is not a good measurement here
+  - Accuracy is not a good measurement here
 - Adding class weights and reducing legit entries was key
 
 # Part Three: Continued
@@ -42,11 +42,11 @@
 
 ### Web Scraping:
 - Indeed bot protection
- - selenium (headless)
- - “user-agent” data
+  - selenium (headless)
+  - “user-agent” data
 - Beautiful Soup
- - get data by id, name, or class
- - search for keywords
+  - get data by id, name, or class
+  - search for keywords
 
 ### Making a Prediction:
 - Import tokenizer model
